@@ -1,0 +1,11 @@
+Pentru a rezolva problema am implementat operatiile de tip Map si Reduce.
+
+Am creeat task-urile de tip Map si am modificat poziile de la care incep sau se termina, pentru
+ca acestea sa nu inceapa/sa se termine in mijlocul unui cuvant. Task-urile le-am impartit
+in mod egal workerilor. In fiecare task am parcurs lista de cuvinte si am pastrat
+lungimile acestora, cat si numarul de aparitii intr-o variabila de tip Map<int, int>, 
+iar cele mai lungi cuvinte intr-o lista de String. Threadul 0 a creeat noile task-uri
+de tip Reduce, cate unul pentru fiecare fisier care a trebuit parsat. Noile task-uri
+se impart in mod egal thread-urilor. In fiecare task se parcurge lista de lungimi
+si se calculeaza rang-ul. Numerele fibonacci deja calculate sunt pastrate intr-o lista.
+Se parcurge lista celor mai lungi cuvinte si se pastreaza lungimea celui mai mare cuvant.

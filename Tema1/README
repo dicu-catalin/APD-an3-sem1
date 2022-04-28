@@ -1,0 +1,10 @@
+Pentru a transforma implementarea secventiala in una paralela, am facut urmatoarele:
+
+Am creeat un numar de P threaduri. Pentru fiecare thread am creeat cate un obiect 
+in care am pus toate varabilele din run_genetic_algorithm. In functia executata de
+fiecare thread am calculat indici de start si stop, care reprezinta obiectele din 
+vector pe care le primeste fiecare thread. Fiecare thread calculeaza fitness-ul 
+obiectelor sale si le ordoneaza. Dupa aceea, asteapta ca toate thread-urile sa se
+termine, iar thread 0 va face merge intre partile sortate ale fiecarui thread.
+Thread 0 va rula restul de functii(mutate si crossover), iar celelalte thread-uri vor
+astepta ca acesta sa termine, dupa care o vor lua de la inceput cu calcularea fitness-ului.

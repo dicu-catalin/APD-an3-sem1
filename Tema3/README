@@ -1,0 +1,9 @@
+Am rezolvat problema considerand ca nu exista conexiune directa intre 0 si 1.
+
+Taskurile leader trimit topologiile clusterelor sale celorlalti leaderi, iar
+acestia vor trimite topologia completa, atunci cand o au, taskurilor worker proprii.
+Pentru partea a doua, vectorul de elemente se imparte in mod egal fiecarui worker.
+Procesul 0 trimite vectorii corespunzatori fiecarui leader(vectorul pentru procesul 0
+este trimis la procesul 2, iar acesta il trimite la procesul 1), iar acestia trimit
+vectorul mai departe proceselor worker proprii. Dupa realizarea calculelor, procesul 0
+primeste noul vector si il afiseaza. 
